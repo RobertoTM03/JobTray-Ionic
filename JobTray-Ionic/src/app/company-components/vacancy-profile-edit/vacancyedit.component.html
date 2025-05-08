@@ -1,0 +1,97 @@
+<ion-content *ngIf="currentVacancy as vacancy">
+  <form (ngSubmit)="saveChanges()">
+    <ion-card class="father-vacancy">
+
+      <ion-card-header class="dashboard-vacancy-new">
+        <ion-item lines="none" class="item-vacancy">
+          <ion-avatar slot="start">
+            <img [src]="vacancy.image" class="user-image-vacancy" alt="user image">
+          </ion-avatar>
+          <ion-label>
+            <h1 class="font-vacancy">{{ vacancy.name }}</h1>
+          </ion-label>
+        </ion-item>
+
+        <ion-button expand="block" type="submit" class="SaveChanges" id="desktopSaveChanges">
+          <ion-label><b>Save Changes</b></ion-label>
+        </ion-button>
+      </ion-card-header>
+
+      <ion-card-content class="write-space-vacancy">
+        <ion-item lines="none" class="space-write">
+          <ion-textarea
+            placeholder="Enter your requirements for the job position"
+            [(ngModel)]="vacancy.description"
+            name="description"
+            class="text-user-vacancy">
+          </ion-textarea>
+        </ion-item>
+
+        <ion-list class="vacancy-request">
+          <ion-item>
+            <ion-label class="vacancy-label">Apply Before:</ion-label>
+            <ion-datetime
+              presentation="date"
+              [(ngModel)]="vacancy.dueDate"
+              name="dueDate"
+              class="vacancy-input">
+            </ion-datetime>
+          </ion-item>
+
+          <ion-item>
+            <ion-label class="vacancy-label">Job Posted On:</ion-label>
+            <ion-input
+              [value]="vacancy.postedDate"
+              readonly
+              class="vacancy-input">
+            </ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label class="vacancy-label">Job Type:</ion-label>
+            <ion-input
+              placeholder="Enter job type"
+              [(ngModel)]="vacancy.jobType"
+              name="jobType"
+              class="vacancy-input">
+            </ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label class="vacancy-label">Salary</ion-label>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="6">
+                  <ion-input
+                    placeholder="Min"
+                    type="number"
+                    [(ngModel)]="vacancy.minimumSalary"
+                    name="minimumSalary"
+                    class="salary-input">
+                  </ion-input>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-input
+                    placeholder="Max"
+                    type="number"
+                    [(ngModel)]="vacancy.maximumSalary"
+                    name="maximumSalary"
+                    class="salary-input">
+                  </ion-input>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+
+    </ion-card>
+
+    <!-- Mobile Save Button -->
+    <ion-footer>
+      <ion-button expand="block" (click)="saveChanges()" class="SaveChanges" id="mobileSaveChanges">
+        <b>Save changes</b>
+      </ion-button>
+    </ion-footer>
+  </form>
+</ion-content>

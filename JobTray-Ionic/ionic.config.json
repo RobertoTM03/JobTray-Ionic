@@ -1,0 +1,7 @@
+{
+  "name": "JobTray-Ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
