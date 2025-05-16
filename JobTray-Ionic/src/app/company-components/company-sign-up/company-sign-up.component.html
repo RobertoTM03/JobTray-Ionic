@@ -1,0 +1,88 @@
+  <ion-content class="ion-padding">
+      <section class="sign-box">
+        <div class="title-text">
+          <h1>Expand your company!</h1>
+        </div>
+
+        <section class="sign-entry-form">
+          <form #signupForm="ngForm" (ngSubmit)="signUp()" id="signup-company">
+            <label for="name">Company name</label>
+            <ion-item>
+              <ion-input type="text"
+                         id="name"
+                         placeholder="Enter your company name"
+                         [(ngModel)]="companyName"
+                         name="companyName" required>
+              </ion-input>
+            </ion-item>
+            <label for="email">Email Address</label>
+            <ion-item>
+              <ion-input  type="email"
+                          id="email"
+                          placeholder="Enter email address"
+                          [(ngModel)]="email"
+                          name="email"
+                          required
+                          pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                          title="Please enter a valid email address">
+
+              </ion-input>
+            </ion-item>
+
+
+            <label for="cif-nif">CIF/NIF</label>
+            <ion-item>
+            <ion-input
+              type="text"
+              id="cif-nif"
+              placeholder="Enter your CIF/NIF"
+              [(ngModel)]="cifNif"
+              name="cifNif"
+              required
+              pattern="^[A-HJ-NP-TV-Z][0-9]{7}[A-Z]$|^[A-HJ-NP-TV-Z]{1}[0-9]{8}[A-J]$"
+              title="CIF/NIF should follow the format: X1234567Y or X12345678A">
+            </ion-input>
+            </ion-item>
+            <label for="password">Password</label>
+            <ion-item>
+            <ion-input
+              type="password"
+              id="password"
+              placeholder="Enter password"
+              [(ngModel)]="password"
+              name="password"
+              required
+              minlength="8"
+              title="Password must be at least 8 characters long">
+            </ion-input>
+            </ion-item>
+
+            <label for="password-confirm">Confirm Password</label>
+            <ion-item>
+            <ion-input
+              type="password"
+              id="password-confirm"
+              placeholder="Repeat the password"
+              [(ngModel)]="confirmPassword"
+              name="confirmPassword"
+              required
+              minlength="8"
+              title="Password must be at least 8 characters long">
+            </ion-input>
+            </ion-item>
+            <button
+              type="submit"
+              class="submit-button"
+              role="button"
+              tabindex="0"
+              [disabled]="signupForm.invalid">
+              Sign up
+            </button>
+          </form>
+        </section>
+
+        <div class="bottom-text">
+          <p>Already have an account? <a (click)="goToCompanySignIn()" role="link" tabindex="0">Login</a></p>
+        </div>
+      </section>
+  </ion-content>

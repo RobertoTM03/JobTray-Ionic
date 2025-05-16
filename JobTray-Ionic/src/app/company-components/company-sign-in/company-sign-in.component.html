@@ -1,0 +1,66 @@
+<ion-content fullscreen>
+  <div class= "sign-page-container">
+    <section class="sign-box">
+      <div class="title-text">
+        <ion-text>
+          <h1>Welcome back</h1>
+        </ion-text>
+      </div>
+
+      <section class="sign-entry-form">
+        <form id="loginFormCompany" (ngSubmit)="signIn()" #signInForm="ngForm">
+          <ion-label for="email">Email Address</ion-label>
+          <ion-input
+            type="email"
+            id="email"
+            placeholder="Enter email address"
+            [(ngModel)]="email"
+            name="email"
+            required
+            fill="outline"
+          ></ion-input
+          >
+
+          <ion-label for="password">Password</ion-label>
+          <ion-input
+            type="password"
+            id="password"
+            placeholder="Enter password"
+            [(ngModel)]="password"
+            name="password"
+            required
+            minlength="8"
+            #passwordField="ngModel"
+            fill="outline"
+          ></ion-input>
+
+          <div *ngIf="passwordField.invalid && passwordField.touched" style="color: red;">
+            <p>Password must be at least 8 characters long.</p>
+          </div>
+
+          <ion-button
+            expand="block"
+            type="submit"
+            class="submit-button"
+            role="button"
+            [disabled]="signInForm.invalid"
+          >
+            Login
+          </ion-button>
+        </form>
+      </section>
+
+      <div class="bottom-text">
+        <p>
+          Don’t have an account?
+          <a (click)="goToCompanySignUp()" role="link" tabindex="0">Sign Up</a>
+        </p>
+      </div>
+    </section>
+
+    <ion-text *ngIf="errorMessage" color="danger">
+      <p>{{ errorMessage }}</p>
+    </ion-text>
+    </div>
+</ion-content>
+
