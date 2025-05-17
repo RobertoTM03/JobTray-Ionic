@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-text style="color:black;">
+    <h1>Vacancy</h1>
+  </ion-text>
+</ion-header>
+<!--<ion-content class="vacancy-section" *ngIf="currentVacancy as vacancy"> -->
+<ion-content class="vacancy-section" >
+  <form (ngSubmit)="saveChanges()">
+  <section className="information-company-section" style="display: flex; align-items: center; margin-bottom: 20px;">
+    <!--img [src]="vacancy.image" class="user-image-vacancy" alt="user image"> -->
+    <img src="" class="user-image-vacancy" alt="user image">
+    <ion-text>
+      <!--<h1 class="font-vacancy">{{ vacancy.name }}</h1>-->
+      <h1 class="font-vacancy">Fuciona</h1>
+    </ion-text>
+  </section>
+    <section >
+      <ion-text>
+        <h3 class="about-this-role">About this role</h3>
+      </ion-text>
+
+    </section>
+  <section className="data-section">
+    <section style="margin-bottom: 25px;margin-left:20px;">
+      <ion-text>Apply before</ion-text>
+      <ion-item>
+        <!--<ion-input type="date" [(ngModel)]="vacancy.dueDate" name="dueDate" /> -->
+        <ion-input type="date" name="dueDate" />
+      </ion-item>
+    </section>
+    <section style="margin-bottom: 25px;margin-left:20px;">
+      <ion-text>Jobs Posted On</ion-text>
+      <ion-item>
+       <!-- <ion-input type="date"  [(ngModel)]="vacancy.jobType" [value]="vacancy.postedDate" readonly /> -->
+        <ion-input type="date"  />
+      </ion-item>
+    </section>
+    <section style="margin-bottom: 25px;margin-left:20px;">
+      <ion-text>Job Type</ion-text>
+      <ion-item>
+        <!--<ion-input type="text"   [(ngModel)]="vacancy.jobType"/> -->
+        <ion-input type="text"   />
+      </ion-item>
+    </section>
+    <section style="margin-bottom: 25px;margin-left:20px;">
+      <ion-text>Salary-Minimum</ion-text>
+      <ion-item>
+        <!--  <ion-input type="text"  [(ngModel)]="vacancy.minimumSalary" /> -->
+        <ion-input type="text"   />
+      </ion-item>
+    </section>
+    <section style="margin-bottom: 25px;margin-left:20px;">
+      <ion-text>Salary-Maximum</ion-text>
+      <ion-item>
+        <!-- <ion-input type="text"  [(ngModel)]="vacancy.maximumSalary" /> -->
+        <ion-input type="text"   />
+      </ion-item>
+    </section>
+    <section style="margin-bottom: 10px;margin-left:20px;">
+      <ion-text>Description of job</ion-text>
+      <ion-item>
+        <!-- <ion-textarea [(ngModel)]="vacancy.description" name="description"></ion-textarea> -->
+        <ion-textarea ></ion-textarea>
+      </ion-item>
+    </section>
+  </section>
+  <section class="button-save-changes" style="margin-top: 10px;">
+    <ion-button>Save Changes</ion-button>
+  </section>
+  </form>
+</ion-content>
+<ion-footer>
+  <ion-text>
+    Hola Mundo
+  </ion-text>
+</ion-footer>

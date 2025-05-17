@@ -19,6 +19,6 @@ bootstrapApplication(AppComponent, {
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    provideIonicAngular()
+    provideIonicAngular(),
   ]
 });

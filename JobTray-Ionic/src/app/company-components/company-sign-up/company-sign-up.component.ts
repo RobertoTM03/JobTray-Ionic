@@ -22,6 +22,7 @@ import {FormsModule} from "@angular/forms";
   selector: 'app-company-sign-up',
   templateUrl: './company-sign-up.component.html',
   styleUrls: ['./company-sign-up.component.scss'],
+  standalone: true,
   imports: [
     IonContent,
     IonText,

@@ -9,9 +9,9 @@ import {
   updateDoc,
   deleteDoc
 } from '@angular/fire/firestore';
-import { Vacancy } from '../models/vacancy';
+import { Vacancy } from '../../company-models/vacancy';
 import { Observable, from } from 'rxjs';
-import {Applicant} from '../models/applicant';
+import {Applicant} from '../../company-models/applicant';
 import { arrayUnion, arrayRemove } from '@angular/fire/firestore';
 import {map} from 'rxjs/operators';
 

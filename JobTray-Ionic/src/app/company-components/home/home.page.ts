@@ -10,5 +10,5 @@ import { CommonModule } from '@angular/common';
   standalone: true,
 })
 export class HomePage {
-      image="/assets/jobtray_logo.png";
+  logoImage="/assets/jobtray_logo.png";
 }

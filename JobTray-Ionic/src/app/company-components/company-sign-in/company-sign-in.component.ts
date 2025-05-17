@@ -1,27 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import {IonButton, IonContent, IonInput, IonLabel, IonText} from "@ionic/angular/standalone";
+import {IonButton, IonContent, IonHeader, IonInput, IonItem, IonLabel, IonText, IonTitle, IonToolbar} from "@ionic/angular/standalone";
 import {Router} from "@angular/router";
 import {Auth, signInWithEmailAndPassword} from '@angular/fire/auth';
 import {CompanyService} from "../../company-service/company-service/company.service";
 import {UserSessionService} from "../../company-service/user-session-service/user-session.service";
-import {NgIf} from '@angular/common';
 import {FirebaseUser} from "../../company-models/firebaseUser";
 import {FormsModule} from "@angular/forms";
+import {NgIf} from "@angular/common";
 
 @Component({
-    selector: 'app-company-sign-in',
-    templateUrl: './company-sign-in.component.html',
-    styleUrls: ['./company-sign-in.component.scss'],
+  selector: 'app-company-sign-in',
+  templateUrl: './company-sign-in.component.html',
+  styleUrls: ['./company-sign-in.component.scss'],
+  standalone: true,
   imports: [
     IonContent,
     IonInput,
     IonLabel,
     IonText,
     FormsModule,
-    IonButton
+    IonButton,
+    NgIf,
+    IonItem,
+    IonHeader,
+    IonTitle,
+    IonToolbar
   ]
 })
-export class CompanySignInComponent  implements OnInit {
+export class CompanySignInComponent   {
   email: string = "";
   password: string = "";
   errorMessage: string = "";
@@ -68,6 +74,6 @@ export class CompanySignInComponent  implements OnInit {
       console.error(error);
     }
   }
-  ngOnInit() {}
+
 
 }

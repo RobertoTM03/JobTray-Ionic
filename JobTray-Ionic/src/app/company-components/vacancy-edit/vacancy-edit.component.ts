@@ -1,53 +1,43 @@
-import {Component, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
-import { VacancyService } from '../../company-service/vacancy-service/vacancy.service';
-import { ActivatedRoute } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { NgIf } from '@angular/common';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { Vacancy } from '../../company-models/vacancy';
+import { Component, OnInit } from '@angular/core';
 import {
-  IonAvatar,
   IonButton,
-  IonCard,
-  IonCardContent,
-  IonCardHeader, IonCol,
-  IonContent, IonDatetime, IonFooter, IonGrid, IonInput,
+  IonContent,
+  IonFooter,
+  IonHeader,
+  IonImg,
+  IonInput,
   IonItem,
-  IonLabel, IonList, IonRow, IonTextarea
-}
-from "@ionic/angular/standalone";
-import {IonicModule} from "@ionic/angular";
+  IonText,
+  IonTextarea
+} from "@ionic/angular/standalone";
+import { FormsModule } from "@angular/forms";
+import { Vacancy } from "../../company-models/vacancy";
+import { VacancyService } from "../../company-service/vacancy-service/vacancy.service";
+import { ActivatedRoute } from '@angular/router'; // Importa ActivatedRoute
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {NgIf} from "@angular/common";
+
 
 @Component({
   selector: 'app-vacancy-edit',
-  templateUrl: './vacancyedit.component.html',
-  styleUrls: ['./vacancyedit.component.scss'],
+  templateUrl: './vacancy-edit.component.html',
+  styleUrls: ['./vacancy-edit.component.scss'],
   imports: [
-    FormsModule,
-    NgIf,
-    MatSnackBarModule,
-    IonCardHeader,
-    IonCard,
+    IonText,
     IonContent,
-    IonItem,
-    IonAvatar,
-    IonLabel,
-    IonButton,
-    IonCardContent,
-    IonTextarea,
-    IonList,
-    IonDatetime,
+    IonHeader,
     IonInput,
-    IonGrid,
-    IonRow,
-    IonCol,
+    IonItem,
+    FormsModule,
+    IonImg,
+    IonTextarea,
     IonFooter,
-    IonicModule
+    IonButton,
+    NgIf
   ],
-  standalone: true,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  standalone: true
 })
-export class VacancyeditComponent {
+export class VacancyEditComponent implements OnInit {
   vacancyId: string = '';
   currentVacancy: Vacancy | null = null;
 
