@@ -2,6 +2,7 @@ import {Component, CUSTOM_ELEMENTS_SCHEMA, OnInit} from '@angular/core';
 import {CompanySignUpComponent} from "../../company-components/company-sign-up/company-sign-up.component";
 import {FooterComponent} from "../../company-components/footer/footer.component";
 import {IonContent, IonFooter, IonHeader, IonItem, IonText} from "@ionic/angular/standalone";
+import {HeaderSignComponent} from "../../company-components/header-sign/header-sign.component";
 
 @Component({
   selector: 'app-sign-up-company',
@@ -15,7 +16,8 @@ import {IonContent, IonFooter, IonHeader, IonItem, IonText} from "@ionic/angular
     IonContent,
     IonHeader,
     IonItem,
-    IonText
+    IonText,
+    HeaderSignComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

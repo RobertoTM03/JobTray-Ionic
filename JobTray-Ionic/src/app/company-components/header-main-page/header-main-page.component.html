@@ -1,0 +1,19 @@
+<ion-header class="main-header">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="header-content">
+        <ion-col size="6" size-md="4" class="logo-container">
+          <img [src]="logoImage" alt="logotype" class="header-logo" />
+        </ion-col>
+        <ion-col size="6" size-md="8" class="button-container">
+          <ion-button fill="solid" class="main-button" (click)="goToJobSeekerSignIn()">
+            Login
+          </ion-button>
+          <ion-button fill="solid" class="main-button" (click)="goToJobSeekerSignUp()">
+            Sign Up
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>

@@ -2,6 +2,7 @@ import { Component, OnInit,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {CompanySignInComponent} from "../../company-components/company-sign-in/company-sign-in.component";
 import {FooterComponent} from "../../company-components/footer/footer.component";
 import {IonContent, IonFooter, IonHeader, IonItem, IonText} from "@ionic/angular/standalone";
+import {HeaderSignComponent} from "../../company-components/header-sign/header-sign.component";
 
 
 @Component({
@@ -17,7 +18,8 @@ import {IonContent, IonFooter, IonHeader, IonItem, IonText} from "@ionic/angular
     IonContent,
     IonHeader,
     IonItem,
-    IonText
+    IonText,
+    HeaderSignComponent
   ]
 })
 export class SignInCompanyComponent  implements OnInit {

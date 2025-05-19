@@ -1,0 +1,10 @@
+ion-toolbar {
+  --background: #3880ff; // Color azul de Ionic
+  --color: white; // Color del texto en el header
+  --border-color: transparent; // Sin borde para un look más limpio
+}
+
+ion-title {
+  font-weight: bold;
+  font-size: 20px;
+}

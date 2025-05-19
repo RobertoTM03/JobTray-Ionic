@@ -18,7 +18,15 @@ export class UserSessionService {
         this.currentUserData = JSON.parse(stored);
       }
     }
-    return this.currentUserData;
+
+    //TODO: Arrglar para que obtenga correctamente los datos del user.
+    const userData: FirebaseUser = {
+      uid: "eRHgPpnjNuNKeNsHqlanQrHXGYC2",
+      name: "Company",
+      email: "company@company.com",
+    };
+
+    return userData;
   }
 
   clearUserData() {

@@ -1,0 +1,155 @@
+/* Remover padding global */
+ion-card {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Encabezado */
+.header-row {
+  display: flex;
+  padding: 8px 16px;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ccc;
+}
+
+.header-col {
+  flex: 1;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Lista de vacantes */
+.vacancy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+
+/* Fila de vacante */
+.job-listing-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid #ddd;
+  padding: 8px 0;
+}
+
+/* Información de vacante */
+.vacancy-info {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Ajuste de imágenes */
+img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  object-fit: cover;
+}
+
+/* Ajustar badges */
+ion-badge {
+  flex: 1;
+  text-align: center;
+  border-radius: 12px;
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+/* Estilos para botones */
+ion-button {
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Forzar scroll interno */
+.scroll-container {
+  height: 100%;
+  overflow-y: auto;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilos generales */
+.vacancy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+
+/* Fila de vacante */
+.job-listing-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid #ddd;
+  padding: 8px 0;
+}
+
+/* Información de vacante */
+.vacancy-info {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Ajuste de imágenes */
+img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  object-fit: cover;
+}
+/* Espaciado para el toggle */
+ion-toggle {
+  margin-right: 8px;
+}
+
+/* Ajuste de posición para los botones */
+ion-button {
+  margin-left: 8px;
+}
+/* Ajustes generales */
+.vacancy-info {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Contenedor para el botón y el toggle */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+/* Estilo del toggle */
+.favorite-toggle {
+  --handle-background: #ffcc00;
+  --handle-color-checked: #ffffff;
+  --background-checked: #ffd700;
+  --background: #ccc;
+  border-radius: 20px;
+}
+
+/* Imagen del logo */
+img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  object-fit: cover;
+}

@@ -1,0 +1,36 @@
+<ion-content class="list-container">
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-header>
+          <div class="header-row">
+            <div class="header-col">Vacancy Name</div>
+            <div class="header-col">Stage</div>
+            <div class="header-col"></div>
+          </div>
+        </ion-card-header>
+
+        <ion-list class="vacancy-list">
+          <ion-item *ngFor="let vacancy of vacancies">
+            <div class="vacancy-info">
+              <img [src]="vacancy.image || '../../assets/images/placeholder.png'" alt="Vacancy image" />
+              <span>{{ vacancy.name }}</span>
+            </div>
+
+
+
+            <ion-badge slot="end">{{ vacancy.stage }}</ion-badge>
+
+            <ion-button slot="end" color="tertiary" (click)="seeVacancy(vacancy.id)" fill="outline" size="small">See Vacancy</ion-button>
+            <!-- Toggle favorito -->
+            <ion-toggle
+              slot="end"
+              [checked]="vacancy.isFavorite"
+              (ionChange)="toggleFavorite(vacancy)"
+            ></ion-toggle>
+          </ion-item>
+        </ion-list>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>

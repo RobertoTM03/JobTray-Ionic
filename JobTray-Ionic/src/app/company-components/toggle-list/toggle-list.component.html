@@ -1,0 +1,8 @@
+<ion-segment [value]="activeTab" (ionChange)="switchTab($event.detail.value)">
+  <ion-segment-button value="jobListing">
+    Job Listing
+  </ion-segment-button>
+  <ion-segment-button value="favorites">
+    Favorites
+  </ion-segment-button>
+</ion-segment>

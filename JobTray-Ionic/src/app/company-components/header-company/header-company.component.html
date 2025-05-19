@@ -1,0 +1,53 @@
+<!-- Menú lateral -->
+<ion-menu side="start" menuId="main-menu" contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <!-- Información del perfil -->
+      <ion-item lines="none" class="profile-info">
+        <img src="/assets/default-profile.png" class="profile-image" alt="Profile Image">
+        <div class="profile-details">
+          <strong>Company Name</strong><br>
+          <span>company&#64;email.com</span>
+        </div>
+      </ion-item>
+
+      <!-- Opciones del menú -->
+      <ion-menu-toggle auto-hide="false">
+        <ion-item routerLink="/joblisting" button>
+          Job Listing
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle auto-hide="false">
+        <ion-item routerLink="/vacancyedit" button>
+          Edit Vacancy
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle auto-hide="false">
+        <ion-item color="danger" button (click)="logOut()">
+          Log Out
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- Encabezado principal -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false" menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>
+      <img src="/assets/jobtray_logo_with_text.png" class="header-logo" alt="Company Logo">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>

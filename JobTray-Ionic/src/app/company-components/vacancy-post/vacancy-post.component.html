@@ -1,0 +1,159 @@
+<ion-content class="vacancy-post-container">
+  <form #postVacancyForm="ngForm" (ngSubmit)="postVacancy(postVacancyForm)" novalidate>
+
+    <!-- Job Title -->
+    <ion-item class="form-group-section" lines="full">
+      <ion-label position="stacked">Job Title</ion-label>
+      <ion-text color="medium" class="info-text">Job titles must describe one position</ion-text>
+      <ion-input
+        type="text"
+        placeholder="You write a job title"
+        [(ngModel)]="vacancy.name"
+        name="name"
+        required
+        #name="ngModel"
+      ></ion-input>
+      <ion-text color="danger" *ngIf="name.invalid && (name.touched || submitted)" class="error-message">
+        Job title is required.
+      </ion-text>
+    </ion-item>
+
+    <!-- Job Type -->
+    <ion-item class="form-group-section" lines="full">
+      <ion-label position="stacked">Type of Employment</ion-label>
+      <ion-text color="medium" class="info-text">You can select one type of employment</ion-text>
+      <ion-radio-group [(ngModel)]="vacancy.jobType" name="jobType" required>
+        <ion-item>
+          <ion-label>Full-Time</ion-label>
+          <ion-radio slot="start" value="full-time"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Part-Time</ion-label>
+          <ion-radio slot="start" value="part-time"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Remote</ion-label>
+          <ion-radio slot="start" value="remote"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Internship</ion-label>
+          <ion-radio slot="start" value="internship"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Contract</ion-label>
+          <ion-radio slot="start" value="contract"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+      <ion-text color="danger" *ngIf="!vacancy.jobType && submitted" class="error-message">
+        Type of Employment is required.
+      </ion-text>
+    </ion-item>
+
+    <!-- Salary -->
+    <ion-item class="form-group-section" lines="full">
+      <ion-label position="stacked">Salary</ion-label>
+      <ion-text color="medium" class="info-text">Please specify the estimated salary range for the role</ion-text>
+      <div class="salary-container">
+        <span>$</span>
+        <ion-input
+          type="number"
+          placeholder="0"
+          [(ngModel)]="vacancy.minimumSalary"
+          name="minimumSalary"
+          required
+          #minimumSalary="ngModel"
+        ></ion-input>
+        <span>to</span>
+        <span>$</span>
+        <ion-input
+          type="number"
+          placeholder="100000"
+          [(ngModel)]="vacancy.maximumSalary"
+          name="maximumSalary"
+          required
+          #maximumSalary="ngModel"
+        ></ion-input>
+      </div>
+      <ion-text color="danger" *ngIf="minimumSalary.invalid && (minimumSalary.touched || submitted)" class="error-message">
+        Minimum salary is required.
+      </ion-text>
+      <ion-text color="danger" *ngIf="maximumSalary.invalid && (maximumSalary.touched || submitted)" class="error-message">
+        Maximum salary is required.
+      </ion-text>
+    </ion-item>
+
+    <!-- Employment Sector -->
+    <ion-item class="form-group-section" lines="full">
+      <ion-label position="stacked">Employment Sector</ion-label>
+      <ion-text color="medium" class="info-text">You can select one employment sector</ion-text>
+      <ion-radio-group [(ngModel)]="vacancy.employmentSector" name="employmentSector" required>
+        <ion-item>
+          <ion-label>Primary</ion-label>
+          <ion-radio slot="start" value="primary"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Secondary</ion-label>
+          <ion-radio slot="start" value="secondary"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Third</ion-label>
+          <ion-radio slot="start" value="third"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+      <ion-text color="danger" *ngIf="!vacancy.employmentSector && submitted" class="error-message">
+        Employment sector is required.
+      </ion-text>
+    </ion-item>
+
+    <!-- Minimum Education Required -->
+    <ion-item class="form-group-section" lines="full">
+      <ion-label position="stacked">Minimum Education Required</ion-label>
+      <ion-text color="medium" class="info-text">Select the minimum education required</ion-text>
+      <ion-radio-group [(ngModel)]="vacancy.minimumEducationRequired" name="minimumEducationRequired" required>
+        <ion-item>
+          <ion-label>Elementary School</ion-label>
+          <ion-radio slot="start" value="primary"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Middle School</ion-label>
+          <ion-radio slot="start" value="secondary"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>High School</ion-label>
+          <ion-radio slot="start" value="third"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>University</ion-label>
+          <ion-radio slot="start" value="university"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Master</ion-label>
+          <ion-radio slot="start" value="master"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+      <ion-text color="danger" *ngIf="!vacancy.minimumEducationRequired && submitted" class="error-message">
+        Education level is required.
+      </ion-text>
+    </ion-item>
+
+    <!-- Description -->
+    <ion-item class="form-group-section" lines="full">
+      <ion-label position="stacked">Job Description</ion-label>
+      <ion-textarea
+        placeholder="This description will be displayed publicly"
+        [(ngModel)]="vacancy.description"
+        name="description"
+        required
+      ></ion-textarea>
+      <ion-text color="danger" *ngIf="!vacancy.description && submitted" class="error-message">
+        Job description is required.
+      </ion-text>
+    </ion-item>
+
+    <!-- Submit Button -->
+    <ion-button expand="block" color="primary" type="submit" class="vacancy-submit-btn">
+      Submit Offer
+    </ion-button>
+
+  </form>
+</ion-content>

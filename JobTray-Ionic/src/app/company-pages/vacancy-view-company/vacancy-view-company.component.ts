@@ -1,6 +1,6 @@
 import {Component, CUSTOM_ELEMENTS_SCHEMA, OnInit} from '@angular/core';
 import {VacancyEditComponent} from "../../company-components/vacancy-edit/vacancy-edit.component";
-import { IonicModule } from '@ionic/angular'; // Importa IonicModule
+import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import {FormsModule} from "@angular/forms";
 
